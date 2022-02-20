@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+* {
+    box-sizing: border-box;
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+  }
+.app-container{
+  display: grid;
+  grid-template-columns: 35% 65%;
+  width: 900px;
+}
+/* SideBar I */
+
+.note-container{
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+}
+.side-bar-notes{
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(0, 0, 0);
+  color: white;
+  width: 280px;
+  padding: 10px 10px;
+  margin: 5px 0px;
+  margin-left: 20px;
+}
+.side-bar-notes:hover{
+  background-color: rgb(60, 55, 124);
+  color: rgb(255, 255, 255);
+}
+.time{
+  font-size: 8px;
+}
+.remove-button{
+  background-color: rgb(0, 0, 0);
+  color: aliceblue;
+  border: none;
+  height: 53.5px;
+  width: 53.5px;
+  font-size: 20px;
+  margin-right: 20px;
+}
+.remove-button:hover{
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+}
+/* SideBar I */
+
+
+/* SideBar II */
+
+.side-bar{
+  background-color: rgb(212, 212, 212);
+}
+.side-bar-header{
+  background-color:  rgb(158, 153, 221);
+  display: grid;
+  grid-template-columns: 80% 20%;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 5px 20px;
+}
+.plus-button{
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+  border: none;
+  height: 40px;
+  width: 40px;
+  border-radius: 5px;
+  font-size: 20px;
+}
+.plus-button:hover{
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+}
+.notes-main-container{
+  margin-bottom: 30px;
+}
+/* SideBar II */
+
+/* Editor I */
+
+.editor{
+  background-color:rgb(177, 177, 177);
+}
+.text{
+  background-color:  rgb(139, 135, 202);
+  padding: 19px 20px;
+  margin: 0;
+}
+.text-area{
+  width: 500px;
+  height: 500px;
+  margin: 24px 40px;  
+  border: none;
+  padding: 10px;
+}
+/* Editor I */
+
+
