@@ -12,7 +12,6 @@ export default function Note(){
   const[currentNoteIdForStyle, setCurrentIdForStyle] = React.useState(notes[0] && notes[0].id) || []
   const[currentNoteIdForSeleted, setCurrentNoteIdForSeleted] = React.useState(notes[0] && notes[0].id) || []
 
-
   console.log(notes)
   console.log("currentNoteId: " + currentNoteId)
   console.log("currentNoteIdForStyle: " + currentNoteIdForStyle)
@@ -22,6 +21,8 @@ export default function Note(){
     const newNote ={
       id: nanoid(),
       body: "New note...",
+      title: "New note...",
+      description: "description...",
       time: moment().subtract(10, 'days').calendar(),
       erase: null,
       highLight: null,
@@ -85,10 +86,6 @@ export default function Note(){
       })
     }
   }
-
-
-
-
   React.useEffect(() => {
     localStorage.setItem("notes", JSON.stringify(notes))
   }, [notes])
@@ -111,6 +108,7 @@ export default function Note(){
       <Editor
         setNotes={setNotes}
         currentNoteId={currentNoteId}
+        notes={notes}
       />
     </div>
   )
