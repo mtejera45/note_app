@@ -62,7 +62,11 @@
   font-size: 20px;
 }
 .remove-button-no{
-  display: none;
+  color: transparent;
+  background-color: transparent;
+  border: none;
+
+
 }
 /* SideBar I */
 
