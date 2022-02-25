@@ -4,12 +4,13 @@
     box-sizing: border-box;
     font-size: 14px;
     font-family: 'Poppins', sans-serif;
-  }
+}
 .app-container{
   display: grid;
   grid-template-columns: 35% 65%;
   width: 900px;
 }
+
 /* SideBar I */
 
 .note-container{
@@ -20,32 +21,48 @@
 .side-bar-notes{
   display: flex;
   flex-direction: column;
-  background-color: rgb(0, 0, 0);
   color: white;
-  width: 280px;
-  padding: 10px 10px;
+}
+.each-note-container{
+  background-color: rgb(0, 0, 0);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 230px;
+  height: 53.5px;
+  padding: 0px 10px;
   margin: 5px 0px;
   margin-left: 20px;
+  border-radius: 5px;
 }
-.side-bar-notes:hover{
+.each-note-container:hover{
+  background-color:  rgb(139, 135, 202);
+}
+.each-note-container-no{
   background-color: rgb(60, 55, 124);
-  color: rgb(255, 255, 255);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 230px;
+  height: 53.5px;
+  padding: 0px 10px;
+  margin: 5px 0px;
+  margin-left: 20px;
+  border-radius: 5px;
 }
 .time{
   font-size: 8px;
 }
 .remove-button{
-  background-color: rgb(0, 0, 0);
-  color: aliceblue;
+  background-color: transparent;
+  color: rgb(255, 255, 255);
   border: none;
-  height: 53.5px;
+  height: 100.5px;
   width: 53.5px;
   font-size: 20px;
-  margin-right: 20px;
 }
-.remove-button:hover{
-  background-color: rgb(255, 255, 255);
-  color: rgb(0, 0, 0);
+.remove-button-no{
+  display: none;
 }
 /* SideBar I */
 
@@ -99,5 +116,3 @@
   padding: 10px;
 }
 /* Editor I */
-
-

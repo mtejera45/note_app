@@ -3,17 +3,28 @@ import "../styles.css";
 
 
 export default function SideBar(props){
+
     const notesArray = props.notes.map((note, index) => (
         /* SideBar Style I */
         <div 
         key={note.id}
-        onClick={(event)=> props.updateText(note) }
-        >
-            <div className="note-container"
+        onClick={(event)=> {
+            props.updateText(note);
+            props.highLightOn(event, note.id);
+            props.setCurrentNoteId(note.id)
+        }}
+        onMouseMove={function(event)
+            {props.eraseOn(event, note.id);
+            props.setCurrentIdForStyle(note.id)
+            props.setCurrentNoteIdForSeleted(note.id)
+        }}
             
-            onClick={()=> props.setCurrentNoteId(note.id)}
-            >
-                <h4 className="side-bar-notes">
+        onMouseLeave={(event)=>props.eraseOff(event, note.id)}
+        >
+            <div className="note-container">       
+                <div 
+                    className={note.highLight? "each-note-container-no": "each-note-container"}                >
+                    <div className="side-bar-notes">
                     {   note.body.split("\n")[0].length > 10? 
                         note.body.split("\n")[0].substring(0,15)+"..." 
                         : note.body.split("\n")[0]}
@@ -25,17 +36,16 @@ export default function SideBar(props){
                     However, it is important to cut the text of the description.
                       */}
                     <span className="time">{note.time}</span>
-                </h4>
-                <button
-                className="remove-button"
-                onClick={(event)=> props.deleteNote(event, note.id) }
-                >⌫</button>
+                    </div>
+                    <button className={note.erase? "remove-button": "remove-button-no"}
+                        onClick={(event)=> props.deleteNote(event, note.id) }
+                    >⌫</button>
+                </div>
+     
              </div>
 
         </div>
     ))
-
-
 
     return(
         /* SideBar Style II */
