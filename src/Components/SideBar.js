@@ -6,8 +6,8 @@ export default function SideBar(props){
     const notesArray = props.notes.map((note, index) => (
         
         <div 
-        key={note.id}
-        onClick={(event)=> {
+            key={note.id}
+            onClick={(event)=> {
             props.updateText(note);
             props.highLightOn(event, note.id);
             props.setCurrentNoteId(note.id)
@@ -17,12 +17,12 @@ export default function SideBar(props){
             props.setCurrentIdForStyle(note.id)
             props.setCurrentNoteIdForSeleted(note.id)
         }}
-        onMouseLeave={(event)=>
+            onMouseLeave={(event)=>
             props.eraseOff(event, note.id)}
         >
-            <div className="note-container">       
-                <div 
-                    className={note.highLight? "each-note-container-no": "each-note-container"}                >
+            <div className="note-container">   
+
+                <div className={note.highLight? "each-note-container-no": "each-note-container"}                >
                     <div className="side-bar-notes">
 
                     {note.title}
@@ -30,10 +30,12 @@ export default function SideBar(props){
                     {note.description}
 
                     <span className="time">{note.time}</span>
+
                     </div>
                     <button className={note.erase? "remove-button": "remove-button-no"}
                         onClick={(event)=> props.deleteNote(event, note.id) }
                     >⌫</button>
+
                 </div>
      
              </div>
